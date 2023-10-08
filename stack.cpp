@@ -25,6 +25,7 @@ void Stack::push(int element) {
         size *= STACK_GROWTH_RATE;
         elements = (int*) realloc(elements, size * sizeof(int));
         checkAllocation();
+        cout << "Memory reallocated" << endl;
     }
     elements[top_index++] = element;
     cout << "Element " << element << " pushed to stack" << endl;
@@ -38,17 +39,19 @@ int Stack::pop() {
     }
     else {
         cout << "Stack is empty" << endl;
+        free(elements);
         abort();
     }
 }
 
 bool Stack::isEmpty() {
-    if (size == 0)
+    if (top_index == 0)
         return true;
-    else if (size > 0)
+    else if (top_index > 0)
         return false;
     else {
         cout << "Stack doesnt exist anymore" << endl;
+        free(elements);
         abort();
     }
 }
@@ -56,6 +59,7 @@ bool Stack::isEmpty() {
 void Stack::checkAllocation() {
     if (!elements) {
         cout << "Memory allocation error" << endl;
+        free(elements);
         abort();
     }
 }
