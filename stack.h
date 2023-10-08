@@ -1,6 +1,4 @@
 class Stack {
-
-    private:
     
     int top_index;
     int size;
@@ -8,7 +6,11 @@ class Stack {
 
     public:
     Stack();
-    int push(int element);
+    ~Stack();
+    void push(int element);
     int pop();
-    int isEmpty();
+    bool isEmpty();
+
+    private:
+    void checkAllocation();
 };
