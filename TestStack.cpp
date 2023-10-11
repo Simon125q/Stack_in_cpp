@@ -6,18 +6,22 @@ using namespace std;
 void test1(int num_of_tested_elem);
 void test2(int num_of_tested_elem);
 void test3(int num_of_tested_elem);
+void test4(int num_of_tested_elem);
+void test5();
 
 int main() {
     
     test1(19);
     test2(21);
     test3(10);
+    // test4(12);
+    test5();
 
     return 0;
 }
 
 void test1(int num_of_tested_elem) {
-    printf("TEST 1\n");
+    printf("\nTEST 1\n\n");
     Stack s;
 
     cout << "Stack empty: " << s.isEmpty() << endl;
@@ -36,7 +40,7 @@ void test1(int num_of_tested_elem) {
 }
 
 void test2(int num_of_tested_elem) {
-    printf("TEST 2\n");
+    printf("\nTEST 2\n\n");
     Stack s;
 
     cout << "Stack empty: " << s.isEmpty() << endl;
@@ -50,7 +54,37 @@ void test2(int num_of_tested_elem) {
 }
 
 void test3(int num_of_tested_elem) {
-    printf("TEST 3\n");
+    printf("\nTEST 3\n\n");
+    Stack s1;
+
+    cout << "Stack 1 empty: " << s1.isEmpty() << endl;
+
+    for (int num = 0; num < num_of_tested_elem; num++) {
+        s1.push(num);
+    }
+
+    Stack s2(s1);
+
+    cout << "Stack 1 empty: " << s1.isEmpty() << endl;
+    cout << "Stack 2 empty: " << s2.isEmpty() << endl;
+
+    for (int num = 0; num < num_of_tested_elem; num++) {
+        s2.push(num);
+    }
+
+    cout << "Stack 2 empty: " << s2.isEmpty() << endl;
+
+     for (int num = 0; num < 2 * num_of_tested_elem; num++) {
+        cout << "Poped element: " << s2.pop() << endl;
+    }
+
+    cout << "Stack 1 empty: " << s1.isEmpty() << endl;
+    cout << "Stack 2 empty: " << s2.isEmpty() << endl;
+
+}
+
+void test4(int num_of_tested_elem) {
+    printf("\nTEST 4\n\n");
     Stack s;
 
     cout << "Stack empty: " << s.isEmpty() << endl;
@@ -66,4 +100,23 @@ void test3(int num_of_tested_elem) {
     }
 
     cout << "Stack empty: " << s.isEmpty() << endl;
+}
+
+void test5() {
+    printf("\nTEST 5\n\n");
+
+    Stack s1;
+    s1.push(1);
+    s1.push(2);
+    s1.push(3);
+
+    Stack s2(s1);
+
+    Stack s3 = s1;
+
+    Stack s4;
+    s4.push(10);
+    s4 = s1;
+    s4.pop();
+    s4.pop();
 }
