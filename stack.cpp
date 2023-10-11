@@ -43,18 +43,22 @@ Stack Stack::operator+(const Stack& other) const {
     for(int index = top_index; index < top_index + other.top_index; index++) {
         new_stack.elements[index] = other.elements[index - top_index];
     }
-
+    cout << "Stacks added to each other" << endl;
     return new_stack;
 }
 
 void Stack::operator=(Stack& other) {
+    if (other.top_index + 1 > size) {
+        size = other.size;
+        elements = (int*) realloc(elements, size * sizeof(int));
+        checkAllocation();
+        cout << "Memory reallocated in assigment" << endl;
+    }
     top_index = other.top_index;
-    size = other.size;
-    free(elements);
-    elements = (int*) malloc(size * sizeof(int));
     for (int index = 0; index < top_index; index++) {
         elements[index] = other.elements[index];
     }
+    cout << "Stack assigned" << endl;
 }
 
 void Stack::push(int element) {
@@ -72,6 +76,7 @@ int Stack::pop() {
     if (!isEmpty()) {
         top_index--;
         int element = elements[top_index];
+        cout << "Element " << element << " poped" << endl;
         return element;
     }
     else {
