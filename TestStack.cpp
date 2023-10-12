@@ -11,8 +11,9 @@ void test5();
 void test6();
 void test7();
 
-int main() {
-    
+int main()
+{
+
     test1(19);
     test2(21);
     test3(10);
@@ -24,46 +25,52 @@ int main() {
     return 0;
 }
 
-void test1(int num_of_tested_elem) {
+void test1(int num_of_tested_elem)
+{
     printf("\nTEST 1\n\n");
     Stack s;
 
     cout << "Stack empty: " << s.isEmpty() << endl;
 
-    for (int num = 0; num < num_of_tested_elem; num++) {
+    for (int num = 0; num < num_of_tested_elem; num++)
+    {
         s.push(num);
     }
 
     cout << "Stack empty: " << s.isEmpty() << endl;
 
-    for (int num = 0; num < num_of_tested_elem; num++) {
+    for (int num = 0; num < num_of_tested_elem; num++)
+    {
         s.pop();
     }
 
     cout << "Stack empty: " << s.isEmpty() << endl;
 }
 
-void test2(int num_of_tested_elem) {
+void test2(int num_of_tested_elem)
+{
     printf("\nTEST 2\n\n");
     Stack s;
 
     cout << "Stack empty: " << s.isEmpty() << endl;
 
-    for (int num = 0; num < num_of_tested_elem; num++) {
+    for (int num = 0; num < num_of_tested_elem; num++)
+    {
         s.push(num);
     }
 
     cout << "Stack empty: " << s.isEmpty() << endl;
-    
 }
 
-void test3(int num_of_tested_elem) {
+void test3(int num_of_tested_elem)
+{
     printf("\nTEST 3\n\n");
     Stack s1;
 
     cout << "Stack 1 empty: " << s1.isEmpty() << endl;
 
-    for (int num = 0; num < num_of_tested_elem; num++) {
+    for (int num = 0; num < num_of_tested_elem; num++)
+    {
         s1.push(num);
     }
 
@@ -72,41 +79,46 @@ void test3(int num_of_tested_elem) {
     cout << "Stack 1 empty: " << s1.isEmpty() << endl;
     cout << "Stack 2 empty: " << s2.isEmpty() << endl;
 
-    for (int num = 0; num < num_of_tested_elem; num++) {
+    for (int num = 0; num < num_of_tested_elem; num++)
+    {
         s2.push(num);
     }
 
     cout << "Stack 2 empty: " << s2.isEmpty() << endl;
 
-     for (int num = 0; num < 2 * num_of_tested_elem; num++) {
+    for (int num = 0; num < 2 * num_of_tested_elem; num++)
+    {
         s2.pop();
     }
 
     cout << "Stack 1 empty: " << s1.isEmpty() << endl;
     cout << "Stack 2 empty: " << s2.isEmpty() << endl;
-
 }
 
-void test4(int num_of_tested_elem) {
+void test4(int num_of_tested_elem)
+{
     printf("\nTEST 4\n\n");
     Stack s;
 
     cout << "Stack empty: " << s.isEmpty() << endl;
 
-    for (int num = 0; num < num_of_tested_elem; num++) {
+    for (int num = 0; num < num_of_tested_elem; num++)
+    {
         s.push(num);
     }
 
     cout << "Stack empty: " << s.isEmpty() << endl;
 
-    for (int num = 0; num < num_of_tested_elem + 1; num++) {
+    for (int num = 0; num < num_of_tested_elem + 1; num++)
+    {
         s.pop();
     }
 
     cout << "Stack empty: " << s.isEmpty() << endl;
 }
 
-void test5() {
+void test5()
+{
     printf("\nTEST 5\n\n");
 
     Stack s1;
@@ -125,7 +137,8 @@ void test5() {
     s4.pop();
 }
 
-void test6() {
+void test6()
+{
     printf("\nTEST 6\n\n");
 
     Stack s1;
@@ -143,7 +156,8 @@ void test6() {
     s1.pop();
 }
 
-void test7() {
+void test7()
+{
     printf("\nTEST 7\n\n");
 
     Stack s1;
@@ -164,4 +178,3 @@ void test7() {
     s1.pop();
     s1.pop();
 }
-
