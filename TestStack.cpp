@@ -6,10 +6,13 @@ using namespace std;
 void test1(int num_of_tested_elem);
 void test2(int num_of_tested_elem);
 void test3(int num_of_tested_elem);
-void test4(int num_of_tested_elem);
+//void test4(int num_of_tested_elem);
 void test5();
 void test6();
 void test7();
+void test8();
+void byValue(Stack s);
+void byReference(Stack *s);
 
 int main()
 {
@@ -21,6 +24,7 @@ int main()
     test5();
     test6();
     test7();
+    test8();
 
     return 0;
 }
@@ -177,4 +181,47 @@ void test7()
     s2.pop();
     s1.pop();
     s1.pop();
+}
+
+void test8()
+{
+    printf("\nTEST 8\n\n");
+
+    Stack s1, s2;
+
+    cout << "By value:" << endl;
+    s1.push(1);
+    s1.push(2);
+    s1.push(3);
+    s1.printSize();
+    byValue(s1);
+    s1.printSize();
+    s1.pop();
+
+    cout << "By reference:" << endl;
+    s2.push(1);
+    s2.push(2);
+    s2.push(3);
+    s2.printSize();
+    byReference(&s2);
+    s2.printSize();
+    s2.pop();
+}
+
+void byValue(Stack s)
+{
+    while(!s.isEmpty())
+    {
+        s.pop();
+    }
+    s.push(100);
+}
+
+void byReference(Stack *s)
+{
+    while(!s->isEmpty())
+    {
+        s->pop();
+    }
+    s->push(100);
 }

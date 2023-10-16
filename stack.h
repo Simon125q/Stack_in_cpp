@@ -1,3 +1,5 @@
+#pragma once
+
 class Stack
 {
 
@@ -9,11 +11,12 @@ public:
     Stack();
     ~Stack();
     Stack(Stack &s);
-    Stack operator+(const Stack &other) const;
+    Stack operator+(const Stack &other);
     void operator=(Stack &other);
     void push(int element);
     int pop();
     bool isEmpty();
+    void printSize();
 
 private:
     void checkAllocation();

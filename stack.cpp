@@ -3,6 +3,7 @@
 
 #define INITIAL_STACK_SIZE 2
 #define STACK_GROWTH_RATE 2
+#define ERROR 1
 
 using namespace std;
 
@@ -35,7 +36,7 @@ Stack::Stack(Stack &s)
     cout << "Stack created based on other stack, memory allocated" << endl;
 }
 
-Stack Stack::operator+(const Stack &other) const
+Stack Stack::operator+(const Stack &other)
 {
     Stack new_stack;
     new_stack.top_index = top_index + other.top_index;
@@ -97,7 +98,7 @@ int Stack::pop()
     {
         cout << "Stack is empty" << endl;
         free(elements);
-        abort();
+        exit(ERROR);
     }
 }
 
@@ -111,7 +112,7 @@ bool Stack::isEmpty()
     {
         cout << "Stack doesnt exist anymore" << endl;
         free(elements);
-        abort();
+        exit(ERROR);
     }
 }
 
@@ -121,6 +122,11 @@ void Stack::checkAllocation()
     {
         cout << "Memory allocation error" << endl;
         free(elements);
-        abort();
+        exit(ERROR);
     }
+}
+
+void Stack::printSize()
+{
+    cout << "Stack size is " << top_index << endl;
 }
