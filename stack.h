@@ -10,9 +10,9 @@ class Stack
 public:
     Stack();
     ~Stack();
-    Stack(Stack &s);
+    Stack(const Stack &s);
     Stack operator+(const Stack &other);
-    Stack& operator=(Stack &other);
+    Stack& operator=(const Stack &other);
     void push(int element);
     int pop();
     bool isEmpty();

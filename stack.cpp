@@ -23,7 +23,7 @@ Stack::~Stack()
     cout << "Stack destroyed, memory freed" << endl;
 }
 
-Stack::Stack(Stack &s)
+Stack::Stack(const Stack &s)
 {
     top_index = s.top_index;
     size = s.size;
@@ -55,7 +55,7 @@ Stack Stack::operator+(const Stack &other)
     return new_stack;
 }
 
-Stack& Stack::operator=(Stack &other)
+Stack& Stack::operator=(const Stack &other)
 {
     if (other.top_index + 1 > size)
     {
