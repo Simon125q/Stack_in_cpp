@@ -12,7 +12,7 @@ public:
     ~Stack();
     Stack(Stack &s);
     Stack operator+(const Stack &other);
-    void operator=(Stack &other);
+    Stack& operator=(Stack &other);
     void push(int element);
     int pop();
     bool isEmpty();

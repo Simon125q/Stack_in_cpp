@@ -11,6 +11,8 @@ void test5();
 void test6();
 void test7();
 void test8();
+void test9();
+void test10();
 void byValue(Stack s);
 void byReference(Stack *s);
 
@@ -25,6 +27,8 @@ int main()
     test6();
     test7();
     test8();
+    test9();
+    test10();
 
     return 0;
 }
@@ -206,6 +210,49 @@ void test8()
     byReference(&s2);
     s2.printSize();
     s2.pop();
+}
+
+void test9()
+{
+    printf("\nTEST 9\n\n");
+
+    Stack s1;
+    s1.push(1);
+    s1.push(2);
+    s1.push(3);
+
+    Stack s2 = s1;
+
+    s2.pop();
+    s2.pop();
+    s1.pop();
+    s1.pop();
+}
+
+void test10()
+{
+    printf("\nTEST 10\n\n");
+
+    Stack s1;
+    s1.push(1);
+    s1.push(2);
+    s1.push(3);
+
+    Stack s2(s1);
+
+    s2.push(4);
+    s2.push(5);
+
+    Stack s3(s2);
+
+    s3.pop();
+
+    s1 = s2 = s3;
+
+    s2.pop();
+    s2.pop();
+    s1.pop();
+    s1.pop();
 }
 
 void byValue(Stack s)

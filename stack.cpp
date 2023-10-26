@@ -55,7 +55,7 @@ Stack Stack::operator+(const Stack &other)
     return new_stack;
 }
 
-void Stack::operator=(Stack &other)
+Stack& Stack::operator=(Stack &other)
 {
     if (other.top_index + 1 > size)
     {
@@ -70,6 +70,8 @@ void Stack::operator=(Stack &other)
         elements[index] = other.elements[index];
     }
     cout << "Stack assigned" << endl;
+
+    return *this;
 }
 
 void Stack::push(int element)
