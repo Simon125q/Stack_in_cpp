@@ -2,7 +2,6 @@
 
 class Stack
 {
-
     int top_index;
     int size;
     int *elements;

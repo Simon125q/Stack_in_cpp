@@ -8,10 +8,8 @@
 using namespace std;
 
 Stack::Stack()
+    : top_index{0}, size{INITIAL_STACK_SIZE}, elements{(int *)malloc(size * sizeof(int))}
 {
-    top_index = 0;
-    size = INITIAL_STACK_SIZE;
-    elements = (int *)malloc(size * sizeof(int));
     checkAllocation();
     cout << "Stack Created, memory allocated" << endl;
 }
@@ -24,10 +22,8 @@ Stack::~Stack()
 }
 
 Stack::Stack(const Stack &s)
+    :top_index{s.top_index}, size{s.size}, elements{(int*)malloc(size * sizeof(int))}
 {
-    top_index = s.top_index;
-    size = s.size;
-    elements = (int *)malloc(size * sizeof(int));
     checkAllocation();
     for (int index = 0; index < top_index; index++)
     {
@@ -55,7 +51,7 @@ Stack Stack::operator+(const Stack &other)
     return new_stack;
 }
 
-Stack& Stack::operator=(const Stack &other)
+Stack &Stack::operator=(const Stack &other)
 {
     if (other.top_index + 1 > size)
     {
